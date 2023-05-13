@@ -1,5 +1,5 @@
 
-# Hosting WordPress Application On AWS Cloud Using Terraform
+# WordPress Application On AWS Cloud Using Terraform
 ![terraform_infra drawio](https://github.com/victorekeleme/wordpress_terraform_project/assets/74677661/c42d1a46-ccb1-4f0a-b02c-c8b215bff2a7)
 
 ### AWS Services Utilized:
