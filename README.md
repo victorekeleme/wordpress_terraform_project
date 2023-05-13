@@ -1,4 +1,6 @@
+
 # Hosting WordPress Application On AWS Cloud Using Terraform
+![terraform_infra drawio](https://github.com/victorekeleme/wordpress_terraform_project/assets/74677661/c42d1a46-ccb1-4f0a-b02c-c8b215bff2a7)
 
 ### AWS Services Utilized:
 - Virtual Private Cloud (VPC)
@@ -14,6 +16,8 @@
 ### Tools Utilized:
 - HashiCorp Terrafrom v1.3.6
 - HashiCorp Packer v1.8.6
+- Docker v1.13.1+
+- Docker Compose file format v3.1
 - Visual Studio Code (IDE)
 - Bash Scripting Language
 
@@ -88,8 +92,19 @@ Terraform plan
 ### Apply Terraform Scripts ###
 Terraform apply --auto-approve
 ```
+## Outputs Expected
+
+| Outputs                | Values                                |
+|------------------------|---------------------------------------|
+| database_name          | aws_db_instance.wordpress_db.db_name  |
+| database_user          | aws_db_instance.wordpress_db.username |
+| database_endpoint      | aws_db_instance.wordpress_db.endpoint |
+| load_balancer_dns      | aws_lb.wordpress_alb.dns_name         |
+| baiston_host_public_ip | aws_instance.baiston_host.public_ip   |
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
+## License
+[MIT](https://github.com/victorekeleme/wordpress_terraform_project/blob/main/LICENSE)
