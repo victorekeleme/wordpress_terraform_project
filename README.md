@@ -20,6 +20,7 @@
 - Docker Compose file format v3.1
 - Visual Studio Code (IDE)
 - Bash Scripting Language
+- HashiCorp Configuration Language
 
 ## What is Terraform?
 Terraform is a tool for creating and changing infrastructure quickly and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
