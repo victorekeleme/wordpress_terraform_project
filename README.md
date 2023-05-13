@@ -90,6 +90,15 @@ Terraform plan
 ### Apply Terraform Scripts ###
 Terraform apply --auto-approve
 ```
+## Outputs Expected
+
+| Outputs                | Values                                |
+|------------------------|---------------------------------------|
+| database_name          | aws_db_instance.wordpress_db.db_name  |
+| database_user          | aws_db_instance.wordpress_db.username |
+| database_endpoint      | aws_db_instance.wordpress_db.endpoint |
+| load_balancer_dns      | aws_lb.wordpress_alb.dns_name         |
+| baiston_host_public_ip | aws_instance.baiston_host.public_ip   |
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first
