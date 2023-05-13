@@ -16,6 +16,8 @@
 ### Tools Utilized:
 - HashiCorp Terrafrom v1.3.6
 - HashiCorp Packer v1.8.6
+- Docker v1.13.1+
+- Docker Compose file format v3.1
 - Visual Studio Code (IDE)
 - Bash Scripting Language
 
