@@ -62,7 +62,7 @@ choco install -y terraform
 C:\WINDOWS\system32>terraform -version
 ```
 
-## Note: Packer must be used to build Ami's for Prometheus and WordPress in the ami_creation packer folder with 
+## Note: Packer must be used to build Ami's for Prometheus and WordPress in the ami_creation packer folder
 
 ## What is packer?
 Packer is a free and open-source tool for creating golden images for multiple platforms from a single source configuration.
