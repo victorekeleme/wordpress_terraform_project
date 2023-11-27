@@ -1,0 +1,38 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- stage: vulnerability_scan
+  jobs:
+  - job: dockerfiles
+    steps:
+    - bash: |
+        apt update
+        sudo curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin latest
+
+        wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/junit.tpl
+        docker -v
+        trivy -v
+
+      displayName: Install trivy, docker
+    
+    - bash: |
+        # BASE_IMAGES=$(cat Dockerfile | grep FROM | awk -F ' ' '{print $2}')
+
+        # for image in $BASE_IMAGES
+        # do
+        #   trivy image $image
+        # done
+
+        sudo trivy config  --format template --template @junit.tpl -o result.xml .
+      
+      displayName: Scan base images
+
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFormat: "JUnit"
+        testResultsFiles: '$(System.DefaultWorkingDirectory)/result.xml'
+        
